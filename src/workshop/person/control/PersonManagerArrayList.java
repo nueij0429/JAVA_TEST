@@ -1,6 +1,5 @@
 package workshop.person.control;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import workshop.person.entity.PersonEntity;
@@ -14,7 +13,7 @@ public class PersonManagerArrayList {
 		List<PersonEntity> personList = new ArrayList<>(); //2
 //		PersonEntity[] persons = new PersonEntity[10];
 		
-		PersonManager mgr = new PersonManager();
+		PersonManagerArrayList mgr = new PersonManagerArrayList();
 		mgr.fillPersons(personList);
 		mgr.showPersons(personList);
 		System.out.println(mgr.findByGender(personList, '여'));
@@ -22,7 +21,7 @@ public class PersonManagerArrayList {
 		mgr.showPerson(personList, "김하늘");
 	}
 	
-	public void showPersons(PersonEntity[] persons) {
+	public void showPersons(List<PersonEntity> persons) {
 		//Enhanced for Loop
 		for (PersonEntity person : persons) {
 			System.out.println(person.getName() + " " + person.getGender() + " " + person.getPhone());
@@ -44,7 +43,7 @@ public class PersonManagerArrayList {
 		persons.add(new PersonEntity("최철수","7601211025101", "인천 계양구", "032-122-7832"));
 	}
 	
-	public int findByGender(PersonEntity[] persons, char gender) {
+	public int findByGender(List<PersonEntity> persons, char gender) {
 		int genderCnt = 0;
 		for (PersonEntity person : persons) {
  			if(person.getGender() == gender) {
@@ -54,7 +53,7 @@ public class PersonManagerArrayList {
 		return genderCnt;
 	}
 	
-	public void showPerson(PersonEntity[] persons, String name) {
+	public void showPerson(List<PersonEntity> persons, String name) {
 		for (PersonEntity person : persons) {
 			//String은 reference 타입이므로 값을 비교할 때 equals() 메서드를 사용한다.
  			if(person.getName().equals(name)) {
