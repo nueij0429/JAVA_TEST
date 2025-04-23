@@ -15,7 +15,13 @@ public class PersonManager {
 		
 		PersonManager mgr = new PersonManager();
 		mgr.fillPersons(persons);
+		mgr.showPersons(persons);
+		System.out.println(mgr.findByGender(persons, '여'));
 		
+		mgr.showPerson(persons, "김하늘");
+	}
+	
+	public void showPersons(PersonEntity[] persons) {
 		//Enhanced for Loop
 		for (PersonEntity person : persons) {
 			System.out.println(person.getName() + " " + person.getGender() + " " + person.getPhone());
@@ -35,5 +41,28 @@ public class PersonManager {
 		persons[7] = new PersonEntity("유성미","7103282025101", "서울 은평구", "02-452-0939");
 		persons[8] = new PersonEntity("황재현","7806231031101", "인천 중구", "032-327-2202");
 		persons[9] = new PersonEntity("최철수","7601211025101", "인천 계양구", "032-122-7832");
+	}
+	
+	public int findByGender(PersonEntity[] persons, char gender) {
+		int genderCnt = 0;
+		for (PersonEntity person : persons) {
+ 			if(person.getGender() == gender) {
+ 				genderCnt++;
+ 			}
+ 		}
+		return genderCnt;
+	}
+	
+	public void showPerson(PersonEntity[] persons, String name) {
+		for (PersonEntity person : persons) {
+			//String은 reference 타입이므로 값을 비교할 때 equals() 메서드를 사용한다.
+ 			if(person.getName().equals(name)) {
+ 				System.out.println("[이름] " + person.getName());
+ 				System.out.println("[성별] " + person.getGender());
+ 				System.out.println("[전화번호] " + person.getPhone());
+ 				System.out.println("[주소] " + person.getAddress());
+ 				break;
+ 			}
+ 		}
 	}
 }
