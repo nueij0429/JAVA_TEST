@@ -1,7 +1,14 @@
 package workshop.account.test;
 
+import workshop.account.entity.Account;
+
 public class AccountTest {
 	public static void main(String[] args) {
-		
+		//Account °´Ã¼
+		Account account = new Account("A1100","221-22-3477",100000);
+		System.out.println(account);
+		System.out.println("°í°´¹øÈ£: " + account.getCustId());
+		System.out.println("°èÁÂ¹øÈ£: " + account.getAcctId());
+		System.out.println("ÀÜ¾×: " + account.getBalance());
 	}
 }
