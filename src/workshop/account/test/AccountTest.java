@@ -18,5 +18,8 @@ public class AccountTest {
 		System.out.println("20000¿ø Ãâ±İ");
 		account.withdraw(20000);
 		System.out.println("ÀÜ¾×: " + account.getBalance());
+		
+		account.withdraw(100000);
+		System.out.println("ÀÜ¾×: " + account.getBalance());
 	}
 }
