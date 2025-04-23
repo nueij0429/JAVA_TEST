@@ -12,11 +12,14 @@ public class PersonEntity {
 	}
 
 	public PersonEntity(String name, String ssn, String address, String phone) {
-		super();
-		this.name = name;
-		this.ssn = ssn;
-		this.address = address;
-		this.phone = phone;
+//		this.name = name;
+//		this.ssn = ssn;
+//		this.address = address;
+//		this.phone = phone;
+		setSsn(ssn);
+		setName(name);
+		setAddress(address);
+		setPhone(phone);
 	}
 
 	public String getName() {
@@ -43,7 +46,6 @@ public class PersonEntity {
 		this.ssn = ssn;
 		char genderNum = ssn.charAt(6);
 		if(genderNum == '1' || genderNum == '3') {
-			//this.gender = '³²';
 			setGender('³²');
 		} else {
 			setGender('¿©');
