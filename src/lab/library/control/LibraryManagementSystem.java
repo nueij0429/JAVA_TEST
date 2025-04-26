@@ -11,8 +11,6 @@ public class LibraryManagementSystem {
 		Library library = new Library("중앙 도서관");
 		addSampleBooks(library);
 		
-        System.out.println();
-		
 		System.out.println("===== " + library.getName() + " =====");
 		System.out.println("전체 도서 수: " + library.getTotalBooks());
 		System.out.println("대출 가능 도서 수: " + library.getAvailableBooksCount());
