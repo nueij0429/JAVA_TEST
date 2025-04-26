@@ -1,6 +1,6 @@
 package workshop.book.entity;
 
-public class Magazine extends Publication{
+public class Magazine extends Publication {
 	private String publishingPeriod;
 	
 	public Magazine() {
@@ -16,8 +16,16 @@ public class Magazine extends Publication{
 		return publishingPeriod;
 	}
 	
-	public void setpublishingPeriod(String publishingPeriod) {
-		this.publishingPeriod = publishingPeriod;
-	}
+//	public void setpublishingPeriod(String publishingPeriod) {
+//		this.publishingPeriod = publishingPeriod;
+//	}
 	
+	//추가-잡지 정보를 상세히 표시
+	@Override
+	public String toString() {
+		return "[잡지] 발행주기:" + publishingPeriod + ", " 
+		     + getPage() + "쪽, " 
+		     + getPrice() + "원, " 
+		     + "출판일:" + getPublishingDate();
+	}
 }

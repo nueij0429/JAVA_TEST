@@ -29,6 +29,13 @@ public class Novel extends Publication {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
 	
+	//추가-소설 정보를 상세히 표시
+	@Override
+	public String toString() {
+		return "[소설] 저자:" + author + ", 장르:" + genre + ", " 
+		     + getPage() + "쪽, " 
+		     + getPrice() + "원, " 
+		     + "출판일:" + getPublishingDate();
+	}
 }
